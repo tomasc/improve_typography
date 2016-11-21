@@ -1,3 +1,5 @@
+# TODO: add config for multiply sign form (for example with or without spaces)
+
 module ImproveTypography
   module Processors
     class MultiplySign < Processor

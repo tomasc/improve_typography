@@ -1,10 +1,10 @@
 module ImproveTypography
   module Processors
-    class EnDash < Processor
+    class EmDash < Processor
       REGEXP = /(\w+?)\s+-+\s+(\w+?)/i
 
       def call
-        str.gsub(REGEXP, '\1 – \2')
+        str.gsub(REGEXP, '\1—\2')
       end
     end
   end

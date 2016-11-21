@@ -9,7 +9,7 @@ module ImproveTypography
     end
 
     def call
-      raise NotImplemented
+      str
     end
   end
 end

@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-ImproveTypography.call("'so it isn't authorless'") # => ‘so it isn’t authorless’
+ImproveTypography::Base.call("'so it isn't authorless'") # => ‘so it isn’t authorless’
 ```
 
 ### Options
@@ -33,7 +33,7 @@ ImproveTypography.call("'so it isn't authorless'") # => ‘so it isn’t authorl
 Pass in locale, either as a symbol or string (:en, :cs, …) for language specific corrections. **Pull requests for support for additional languages are welcome!**
 
 ```ruby
-ImproveTypography.call("'so it isn't authorless'", locale: I18n.locale)
+ImproveTypography::Base.call("'so it isn't authorless'", locale: I18n.locale)
 ```
 
 ### Configuation

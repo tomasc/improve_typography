@@ -40,9 +40,15 @@ ImproveTypography.call("'so it isn't authorless'", locale: I18n.locale)
 
 ```ruby
 ImproveTypography.configure do |config|
-  # TODO
+  default_locale = :en
 end
 ```
+
+## Resources and inspiration
+
+* [SmartyPants](https://michelf.ca/projects/php-smartypants)
+* [Truty](https://github.com/mkj-is/Truty)
+* [Typogruby](https://avdgaag.github.io/typogruby)
 
 ## Development
 

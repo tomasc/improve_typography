@@ -41,7 +41,7 @@ ImproveTypography::Base.call("'so it isn't authorless'", locale: I18n.locale)
 ```ruby
 ImproveTypography.configure do |config|
   default_locale = :en
-  multiply_sign = ' × '
+  multiply = ' × '
   em_dash = ' – '
 end
 ```

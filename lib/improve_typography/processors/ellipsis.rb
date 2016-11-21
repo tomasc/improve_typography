@@ -1,5 +1,3 @@
-# TODO: add config whether to use endash ('x – x') or emdash ('x—x') in text
-
 module ImproveTypography
   module Processors
     class Ellipsis < Processor

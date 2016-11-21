@@ -1,3 +1,5 @@
+# TODO: add config for emdash sign form ('—' or ' – ')
+
 module ImproveTypography
   module Processors
     class EmDash < Processor

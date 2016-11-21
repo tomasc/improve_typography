@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-ImproveTypography::Base.call("'so it isn't authorless'") # => ‘so it isn’t authorless’
+ImproveTypography::Base.call("'so it isn't authorless'") # => "‘so it isn’t authorless’"
 ```
 
 ### Options

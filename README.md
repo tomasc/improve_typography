@@ -47,6 +47,12 @@ ImproveTypography.configure do |config|
 end
 ```
 
+## List of processors
+
+* `replace_ellipsis`
+* `replace_em_dash`
+* `replace_en_dash`
+
 ## Resources and inspiration
 
 * [SmartyPants](https://michelf.ca/projects/php-smartypants)

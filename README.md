@@ -55,8 +55,8 @@ end
 
 ## Supported languages
 
-* en (Int. English)
-* cs (Czech)
+* `:en` (Int. English)
+* `:cs` (Czech)
 
 ## Resources and inspiration
 

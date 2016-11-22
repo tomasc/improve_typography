@@ -43,6 +43,8 @@ ImproveTypography.configure do |config|
   default_locale = :en
   multiply = ' × ' # or '×'
   em_dash = '—' # or ' – '
+  only = %i(correct_ellipsis)
+  except = %i(replace_en_dash)
 end
 ```
 

@@ -53,6 +53,11 @@ end
 * `replace_em_dash`
 * `replace_en_dash`
 
+## Supported languages
+
+* en (Int. English)
+* cs (Czech)
+
 ## Resources and inspiration
 
 * [SmartyPants](https://michelf.ca/projects/php-smartypants)

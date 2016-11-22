@@ -4,6 +4,8 @@
 
 Improves typography (quotes, hyphens, etc.) of a given string. Works well with I18n.
 
+Easy to extend by adding processors, or overriding them for specific language. **Pull requests are welcome!**
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -30,7 +32,7 @@ ImproveTypography::Base.call("'so it isn't authorless'") # => "‘so it isn’t 
 
 #### Locale
 
-Pass in locale, either as a symbol or string (:en, :cs, …) for language specific corrections. **Pull requests for support for additional languages are welcome!**
+Pass in locale, either as a symbol or string (:en, :cs, …) for language specific corrections.
 
 ```ruby
 ImproveTypography::Base.call("'so it isn't authorless'", locale: I18n.locale)

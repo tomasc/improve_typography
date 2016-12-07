@@ -9,6 +9,8 @@ module ImproveTypography
 
         it { EmDash.call('you -- me').must_equal 'you—me' }
         it { EmDash.call('insert -- sentence -- here').must_equal 'insert—sentence—here' }
+
+        it { EmDash.call('insert --- sentence').must_equal 'insert—sentence' }
       end
 
       describe "dont's" do

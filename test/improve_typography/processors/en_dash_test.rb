@@ -6,6 +6,7 @@ module ImproveTypography
       describe "do's" do
         it { EnDash.call('June 15 - June 20').must_equal 'June 15 – June 20' }
         it { EnDash.call('19/6/2016 - 30/10/2016').must_equal '19/6/2016 – 30/10/2016' }
+        it { EnDash.call('A -- B').must_equal 'A – B' }
       end
 
       describe "dont's" do

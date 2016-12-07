@@ -4,7 +4,13 @@ module ImproveTypography
       REGEXP = /\.{3,}/i
 
       def call
-        str.gsub(REGEXP, '…')
+        str.gsub(REGEXP, ellipsis_sign)
+      end
+
+      private
+
+      def ellipsis_sign
+        options.fetch(:ellipsis_sign, '…')
       end
     end
   end

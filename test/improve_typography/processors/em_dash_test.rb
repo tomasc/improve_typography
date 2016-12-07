@@ -13,6 +13,10 @@ module ImproveTypography
         it { EmDash.call('insert --- sentence').must_equal 'insert—sentence' }
       end
 
+      describe "options" do
+        it { EmDash.call('you - me', em_dash_sign: ' – ').must_equal 'you – me' }
+      end
+
       describe "dont's" do
         # it { EmDash.call('2-5').must_equal '2-5' }
       end

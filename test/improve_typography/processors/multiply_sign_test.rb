@@ -10,6 +10,10 @@ module ImproveTypography
         it { MultiplySign.call('25,6 x 17.9').must_equal '25,6 × 17.9' }
       end
 
+      describe "options" do
+        it { MultiplySign.call('2x10', multiply_sign: '×').must_equal '2×10' }
+      end
+
       describe "dont's" do
         it { MultiplySign.call('x + y').must_equal 'x + y' }
         it { MultiplySign.call('mexico').must_equal 'mexico' }

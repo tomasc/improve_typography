@@ -1,3 +1,5 @@
+require 'i18n'
+
 module ImproveTypography
   class Configuration
     attr_accessor :default_locale
@@ -9,18 +11,21 @@ module ImproveTypography
     attr_accessor :processors
 
     def initialize
-      # TODO: infer from I18n.default_locale if available?
-      @default_locale = :en
+      @default_locale = I18n.default_locale
 
       @multiply_sign = ' × '
       @em_dash_sign = '—'
       @en_dash_sign = ' – '
-    end
 
-    def processors
-      @processors ||= ObjectSpace.each_object(Class)
-                                 .select { |klass| klass < ImproveTypography::Processor }
-                                 .select { |klass| klass.to_s.split('::').length == 3 }
+      @processors = [
+        Processors::Ellipsis,
+        Processors::EnDash,
+        Processors::EmDash,
+        Processors::MultiplySign,
+        Processors::Numbers,
+        Processors::Quotes,
+        Processors::Units
+      ]
     end
   end
 end

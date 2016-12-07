@@ -18,7 +18,7 @@ module ImproveTypography
       end
 
       describe "dont's" do
-        # it { EmDash.call('2-5').must_equal '2-5' }
+        # it { EmDash.call('2-5').wont_equal '2-5' }
       end
     end
   end

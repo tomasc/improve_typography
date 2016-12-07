@@ -45,15 +45,19 @@ ImproveTypography.configure do |config|
   default_locale = :en
   multiply = ' × ' # or '×'
   em_dash = '—' # or ' – '
-  only = %i(correct_ellipsis) # or except = %i(replace_en_dash)
+  only = %i(Ellipsis) # or except = %i(EmDash)
 end
 ```
 
 ## List of processors
 
-* `replace_ellipsis`
-* `replace_em_dash`
-* `replace_en_dash`
+* `Ellipsis`
+* `EmDash`
+* `EnDash`
+* `MultiplySign`
+* `Numbers`
+* `Quotes`
+* `Units`
 
 ## Supported languages
 

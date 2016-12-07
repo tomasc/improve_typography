@@ -32,7 +32,7 @@ ImproveTypography::Base.call("'so it isn't authorless'") # => "‘so it isn’t 
 
 #### Locale
 
-Pass in locale, either as a symbol or string (:en, :cs, …) for language specific corrections.
+Pass in locale, either as a symbol or string (`:en-GB`, `:cs`, …) for language specific corrections.
 
 ```ruby
 ImproveTypography::Base.call("'so it isn't authorless'", locale: I18n.locale)

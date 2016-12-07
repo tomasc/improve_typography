@@ -11,5 +11,11 @@ module ImproveTypography
     def call
       str
     end
+
+    private
+
+    def configuration
+      @configuration ||= Configuration.new
+    end
   end
 end

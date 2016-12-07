@@ -1,5 +1,5 @@
 require 'improve_typography/base'
-
+require 'improve_typography/configuration'
 require 'improve_typography/processor'
 
 require 'improve_typography/processors/ellipsis'

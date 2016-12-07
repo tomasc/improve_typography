@@ -10,7 +10,7 @@ module ImproveTypography
       private
 
       def en_dash_sign
-        options.fetch(:en_dash_sign, ' – ')
+        options.fetch(:en_dash_sign, configuration.en_dash_sign)
       end
     end
   end

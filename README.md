@@ -42,10 +42,11 @@ ImproveTypography::Base.call("'so it isn't authorless'", locale: I18n.locale)
 
 ```ruby
 ImproveTypography.configure do |config|
-  default_locale = :en
-  multiply_sign = ' × ' # or '×'
-  em_dash_sign = '—' # or ' – '
-  only = %i(Ellipsis) # or except = %i(EmDash)
+  # default_locale = :en
+  # multiply_sign = ' × '
+  # em_dash_sign = '—'
+  # en_dash_sign = ' – '
+  # processors = [ImproveTypography::Processors::Ellipsis]
 end
 ```
 

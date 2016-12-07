@@ -11,7 +11,7 @@ module ImproveTypography
     end
 
     def call
-      base_processors.each do |klass|
+      configuration.processors.each do |klass|
         self.str = processor_for_locale(klass).call(str)
       end
 
@@ -20,6 +20,10 @@ module ImproveTypography
 
     private
 
+    def configuration
+      @configuration ||= Configuration.new
+    end
+
     def processor_for_locale(klass)
       name = klass.to_s.split('::').last
       Object.const_get("ImproveTypography::Processors::#{locale.to_s.upcase}::#{name}")
@@ -27,20 +31,8 @@ module ImproveTypography
       klass
     end
 
-    def base_processors
-      ObjectSpace.each_object(Class)
-                 .select { |klass| klass < ImproveTypography::Processor }
-                 .select { |klass| klass.to_s.split('::').length == 3 }
-    end
-
     def locale
-      options.fetch :locale, default_locale
-    end
-
-    def default_locale
-      # TODO: infer from I18n.default_locale if exists?
-      # TODO: make configurable?
-      :en
+      options.fetch :locale, configuration.default_locale
     end
   end
 end

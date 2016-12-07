@@ -10,7 +10,7 @@ module ImproveTypography
       private
 
       def multiply_sign
-        options.fetch(:multiply_sign, ' × ')
+        options.fetch(:multiply_sign, configuration.multiply_sign)
       end
     end
   end

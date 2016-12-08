@@ -17,5 +17,9 @@ module ImproveTypography
     def configuration
       @configuration ||= Configuration.new
     end
+
+    def locale
+      options.fetch :locale, I18n.locale
+    end
   end
 end

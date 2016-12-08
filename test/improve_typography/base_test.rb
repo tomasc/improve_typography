@@ -4,13 +4,31 @@ describe ImproveTypography::Base do
   let(:text) { "'So it isn't authorless'. Maybe... Or 2 -- 4?" }
   let(:result) { ImproveTypography::Base.call(text) }
 
+  let(:apostrophe_sign) { I18n.t :apostrophe_sign, scope: %i(improve_typography) }
+  let(:ellipsis_sign) { I18n.t :ellipsis_sign, scope: %i(improve_typography) }
+  let(:en_dash_sign) { I18n.t :en_dash_sign, scope: %i(improve_typography) }
+  let(:single_quotes) { I18n.t :single_quotes, scope: %i(improve_typography) }
+
   describe 'default locale' do
-    it { result.must_equal "‘So it isnʼt authorless’. Maybe… Or 2 – 4?" }
+    it { result.must_equal "#{single_quotes[0]}So it isn#{apostrophe_sign}t authorless#{single_quotes[1]}. Maybe#{ellipsis_sign} Or 2#{en_dash_sign}4?" }
   end
 
-  describe 'specific locale' do
-    let(:result) { ImproveTypography::Base.call(text, locale: :cs) }
-    it { result.must_equal "‚So it isnʼt authorless‘. Maybe… Or 2 – 4?" }
+  describe 'locale' do
+    let(:locale) { :cs }
+    let(:single_quotes) { I18n.t :single_quotes, scope: %i(improve_typography), locale: locale }
+
+    describe 'local' do
+      let(:result) { ImproveTypography::Base.call(text, locale: locale) }
+
+      it { result.must_equal "#{single_quotes[0]}So it isn#{apostrophe_sign}t authorless#{single_quotes[1]}. Maybe#{ellipsis_sign} Or 2#{en_dash_sign}4?" }
+    end
+
+    describe 'global' do
+      before { I18n.locale = locale }
+      after { I18n.locale = I18n.default_locale }
+
+      it { result.must_equal "‚So it isnʼt authorless‘. Maybe… Or 2 – 4?" }
+    end
   end
 
   describe 'skips tags' do

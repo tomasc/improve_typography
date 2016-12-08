@@ -1,0 +1,9 @@
+en:
+  improve_typography:
+    apostrophe_sign: 'ʼ'
+    ellipsis_sign: '…'
+    multiply_sign: ' × '
+    em_dash_sign: '—'
+    en_dash_sign: ' – '
+    single_quotes: '‘’'
+    double_quotes: '“”'

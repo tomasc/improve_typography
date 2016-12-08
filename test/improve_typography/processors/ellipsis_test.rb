@@ -3,12 +3,14 @@ require 'test_helper'
 module ImproveTypography
   module Processors
     describe Ellipsis do
-      describe "do's" do
-        it { Ellipsis.call('...').must_equal '…' }
-        it { Ellipsis.call('......').must_equal '…' }
+      let(:ellipsis_sign) { I18n.t :ellipsis_sign, scope: %i(improve_typography) }
 
-        it { Ellipsis.call('Someday...').must_equal 'Someday…' }
-        it { Ellipsis.call('Someday ...').must_equal 'Someday …' }
+      describe "do's" do
+        it { Ellipsis.call('...').must_equal ellipsis_sign }
+        it { Ellipsis.call('......').must_equal ellipsis_sign }
+
+        it { Ellipsis.call('Someday...').must_equal "Someday#{ellipsis_sign}" }
+        it { Ellipsis.call('Someday ...').must_equal "Someday #{ellipsis_sign}" }
       end
 
       describe "dont's" do

@@ -10,7 +10,7 @@ module ImproveTypography
       private
 
       def em_dash_sign
-        options.fetch(:em_dash_sign, configuration.em_dash_sign)
+        options.fetch(:em_dash_sign, I18n.t(:em_dash_sign, scope: %i(improve_typography), locale: locale))
       end
     end
   end

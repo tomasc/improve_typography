@@ -13,7 +13,7 @@ module ImproveTypography
     def call
       text_nodes.each do |node|
         processors.each do |processor|
-          node.content = processor.call(node.content)
+          node.content = processor.call(node.content, options)
         end
       end
 
@@ -51,7 +51,7 @@ module ImproveTypography
     end
 
     def locale
-      options.fetch :locale, configuration.default_locale
+      options.fetch(:locale, I18n.locale)
     end
   end
 end

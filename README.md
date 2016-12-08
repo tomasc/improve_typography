@@ -4,7 +4,7 @@
 
 Improves typography (quotes, hyphens, etc.) of a given string. Works well with I18n.
 
-Easy to extend by adding processors, or overriding them for specific language. **Pull requests are welcome!**
+Easy to extend by adding processors, or overriding them for specific language.
 
 ## Installation
 
@@ -30,39 +30,68 @@ ImproveTypography::Base.call("'so it isn't authorless'") # => "‘so it isn’t 
 
 Only text inside XHTML tags is corrected (quotes around attributes etc. are preserved).
 
-### Options
+### Locale
 
-#### Locale
+The replacements are locale-specific (corresponding to `I18n.locale`), with a fallback to default `:en`.
 
-Pass in locale, either as a symbol or string (`:en-GB`, `:cs`, …) for language specific corrections.
+Locale can be also provided locally as:
 
 ```ruby
-ImproveTypography::Base.call("'so it isn't authorless'", locale: I18n.locale)
+ImproveTypography::Base.call("'so it isn't authorless'", locale: :cs)
+```
+
+### Extending locales
+
+**Pull requests are welcome!**
+
+There are two options how to provide locale-specific replacements.
+
+#### Via locale files (preferred)
+
+Create or override locale files in your application. See the locale files in the `locales` folder.
+
+#### Via custom class
+
+For more complex replacements, where the above method is not sufficient, it is possible to create locale-specific classes and override default behavior. For example:
+
+```ruby
+module ImproveTypography
+  module Processors
+    module CS # locale name in upcase
+      class SingleQuotes < Processor
+        def call
+          # custom behavior
+        end
+      end
+    end
+  end
+end
 ```
 
 ### Configuation
 
+You can configure applied processors (and their order) globally.
+
 ```ruby
 ImproveTypography.configure do |config|
-  # default_locale = :en
-  # multiply_sign = ' × '
-  # em_dash_sign = '—'
-  # en_dash_sign = ' – '
   # processors = [ImproveTypography::Processors::Ellipsis]
 end
 ```
 
-## List of processors
+## Available processors
 
+* `Apostrophe`
+* `DoubleQuotes`
 * `Ellipsis`
 * `EmDash`
 * `EnDash`
 * `MultiplySign`
 * `Numbers`
-* `Quotes`
+* `SingleQuotes`
 * `Units`
+* `WordLineSeparator`
 
-## Supported languages
+## Supported locales
 
 * `:en` (Int. English)
 * `:cs` (Czech)

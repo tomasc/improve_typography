@@ -8,6 +8,7 @@ module ImproveTypography
       describe "do's" do
         it { SingleQuotes.call("'so it is not authorless'").must_equal "#{single_quotes[0]}so it is not authorless#{single_quotes[1]}" }
         it { SingleQuotes.call("'so it isn't authorless'").must_equal "#{single_quotes[0]}so it isn't authorless#{single_quotes[1]}" }
+        it { SingleQuotes.call("'2 + 2 = 6'").must_equal "#{single_quotes[0]}2 + 2 = 6#{single_quotes[1]}" }
       end
 
       describe "dont's" do

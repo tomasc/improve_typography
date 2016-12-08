@@ -8,6 +8,6 @@ require 'improve_typography/processor'
 Dir["#{File.dirname(__FILE__)}/improve_typography/processors/**/*.rb"].each { |f| require f }
 
 I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
-I18n.load_path << Dir["#{File.dirname(__dir__)}/locales/*.{rb,yml}"]
+I18n.load_path += Dir.glob(File.join( File.dirname(__FILE__), 'config', 'locales', '*.yml' ))
 
 require 'improve_typography/version'

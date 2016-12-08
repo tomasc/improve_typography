@@ -12,7 +12,7 @@ module ImproveTypography
 
     def call
       text_nodes.each do |node|
-        processors.each do |processor|
+        processor_classes.each do |processor|
           node.content = processor.call(node.content, options)
         end
       end
@@ -35,7 +35,11 @@ module ImproveTypography
     end
 
     def processors
-      @processors ||= configuration.processors.map do |klass|
+      options.fetch(:processors, configuration.processors)
+    end
+
+    def processor_classes
+      @processor_classes ||= processors.map do |klass|
         processor_for_locale(klass)
       end
     end

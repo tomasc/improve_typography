@@ -70,12 +70,20 @@ end
 
 ### Configuation
 
-You can configure applied processors (and their order) globally.
+You can configure applied processors (and their order).
+
+#### Globally
 
 ```ruby
 ImproveTypography.configure do |config|
-  # processors = [ImproveTypography::Processors::Ellipsis]
+  processors = [ImproveTypography::Processors::Ellipsis]
 end
+```
+
+#### Locally
+
+```ruby
+ImproveTypography::Base.call("'so it isn't authorless'", processors: [ImproveTypography::Processors::Ellipsis])
 ```
 
 ## Available processors

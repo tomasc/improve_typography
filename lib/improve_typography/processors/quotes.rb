@@ -15,7 +15,7 @@ module ImproveTypography
       private
 
       def replace_apostrophe
-        str.gsub(APOSTROPHE_REGEXP, '\1’\2')
+        str.gsub(APOSTROPHE_REGEXP, '\1ʼ\2')
       end
 
       def replace_double_quotes

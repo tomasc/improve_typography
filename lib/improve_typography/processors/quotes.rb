@@ -25,6 +25,10 @@ module ImproveTypography
       def replace_single_quotes
         str.gsub(SINGLE_QUOTES_REGEXP, '‘\1’')
       end
+
+      def apostrophe_sign
+        options.fetch(:apostrophe_sign, configuration.apostrophe_sign)
+      end
     end
   end
 end

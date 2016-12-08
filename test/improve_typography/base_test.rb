@@ -5,12 +5,12 @@ describe ImproveTypography::Base do
   let(:result) { ImproveTypography::Base.call(text) }
 
   describe 'default locale' do
-    it { result.must_equal "‘So it isn’t authorless’. Maybe… Or 2 – 4?" }
+    it { result.must_equal "‘So it isnʼt authorless’. Maybe… Or 2 – 4?" }
   end
 
   describe 'specific locale' do
     let(:result) { ImproveTypography::Base.call(text, locale: :cs) }
-    it { result.must_equal "‚So it isn’t authorless‘. Maybe… Or 2 – 4?" }
+    it { result.must_equal "‚So it isnʼt authorless‘. Maybe… Or 2 – 4?" }
   end
 
   describe 'skips tags' do

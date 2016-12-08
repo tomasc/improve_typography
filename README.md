@@ -4,7 +4,7 @@
 
 Improves typography (quotes, hyphens, etc.) of a given string. Works well with I18n.
 
-Easy to extend by adding processors, or overriding them for specific language.
+Easy to extend by the way of locale files and processors.
 
 ## Installation
 

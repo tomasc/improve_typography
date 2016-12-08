@@ -28,6 +28,8 @@ Or install it yourself as:
 ImproveTypography::Base.call("'so it isn't authorless'") # => "‘so it isn’t authorless’"
 ```
 
+Only text inside XHTML tags is corrected (quotes around attributes etc. are preserved).
+
 ### Options
 
 #### Locale

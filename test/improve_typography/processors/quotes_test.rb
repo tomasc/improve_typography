@@ -6,10 +6,10 @@ module ImproveTypography
       describe "do's" do
         it { Quotes.call("'so it is not authorless'").must_equal "‘so it is not authorless’" }
         it { Quotes.call('"so it is not authorless"').must_equal '“so it is not authorless”' }
-        it { Quotes.call("'so it isn't authorless'").must_equal "‘so it isn’t authorless’" }
-        it { Quotes.call("isn't").must_equal "isn’t" }
-        it { Quotes.call("Tomas'").must_equal "Tomas’" }
-        it { Quotes.call("Tomas'!").must_equal "Tomas’!" }
+        it { Quotes.call("'so it isn't authorless'").must_equal "‘so it isnʼt authorless’" }
+        it { Quotes.call("isn't").must_equal "isnʼt" }
+        it { Quotes.call("Tomas'").must_equal "Tomasʼ" }
+        it { Quotes.call("Tomas'!").must_equal "Tomasʼ!" }
       end
 
       describe "dont's" do

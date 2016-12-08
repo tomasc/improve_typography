@@ -24,11 +24,14 @@ module ImproveTypography
       @configuration ||= Configuration.new
     end
 
+    def processor_classes
+      @processor_classes ||= ObjectSpace.each_object(Class).select { |klass| klass < Processor }
+    end
+
     def processor_for_locale(klass)
       name = klass.to_s.split('::').last
-      Object.const_get("ImproveTypography::Processors::#{locale.to_s.upcase}::#{name}")
-    rescue NameError => e
-      klass
+      locale_specific_klass = "ImproveTypography::Processors::#{locale.to_s.upcase}::#{name}"
+      processor_classes.detect { |cls| cls.to_s == locale_specific_klass } || klass
     end
 
     def locale

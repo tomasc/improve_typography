@@ -1,3 +1,5 @@
+require_relative '../quotes'
+
 module ImproveTypography
   module Processors
     module CS

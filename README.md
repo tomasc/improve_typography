@@ -4,7 +4,7 @@
 
 Improves typography (quotes, hyphens, etc.) of a given string. Works well with I18n.
 
-Easy to extend by the way of locale files and processors.
+Easy to extend by the way of locale files and processors. **Pull requests are welcome!**
 
 ## Installation
 
@@ -42,9 +42,7 @@ ImproveTypography::Base.call("'so it isn't authorless'", locale: :cs)
 
 ### Extending locales
 
-**Pull requests are welcome!**
-
-There are two options how to provide locale-specific replacements.
+There are two options how to provide locale-specific replacements:
 
 #### Via locale files (preferred)
 

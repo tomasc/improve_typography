@@ -92,6 +92,7 @@ ImproveTypography::Base.call("'so it isn't authorless'", processors: [ImproveTyp
 * `EmDash`
 * `EnDash`
 * `MultiplySign`
+* `Nbsp`
 * `Numbers`
 * `SingleQuotes`
 * `Units`

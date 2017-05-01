@@ -1,7 +1,7 @@
 module ImproveTypography
   module Processors
     class DoubleQuotes < Processor
-      REGEXP = /["](.*)["]/i
+      REGEXP = /["](.*?)["]/i
 
       def call
         replace_double_quotes

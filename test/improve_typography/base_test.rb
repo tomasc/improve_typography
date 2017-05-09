@@ -27,7 +27,7 @@ describe ImproveTypography::Base do
       before { I18n.locale = locale }
       after { I18n.locale = I18n.default_locale }
 
-      it { result.must_equal "‚So it isnʼt authorless‘. Maybe… Or 2 – 4?" }
+      it { result.must_equal "‚So it isn’t authorless‘. Maybe… Or 2 – 4?" }
     end
   end
 

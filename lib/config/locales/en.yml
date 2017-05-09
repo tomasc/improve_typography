@@ -1,6 +1,6 @@
 en:
   improve_typography:
-    apostrophe_sign: 'ʼ'
+    apostrophe_sign: '’'
     ellipsis_sign: '…'
     multiply_sign: ' × '
     em_dash_sign: '—'

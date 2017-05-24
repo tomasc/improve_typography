@@ -11,6 +11,9 @@ module ImproveTypography
         it { Nbsp.call('Width 1? Hmm').must_equal 'Width&nbsp;1? Hmm' }
         it { Nbsp.call('1 Width').must_equal '1&nbsp;Width' }
         it { Nbsp.call('Hmm. 1 Width').must_equal 'Hmm. 1&nbsp;Width' }
+        it { Nbsp.call('Title. © 2016').must_equal 'Title. ©&nbsp;2016' }
+        it { Nbsp.call('Title, Vol. 2').must_equal 'Title, Vol.&nbsp;2' }
+        it { Nbsp.call('Title, No. 3').must_equal 'Title, No.&nbsp;3' }
       end
     end
   end

@@ -1,7 +1,7 @@
 module ImproveTypography
   module Processors
     class SingleQuotes < Processor
-      REGEXP = /['](.*)[']/i
+      REGEXP = /['’‘](.*?)['’‘](?!\w)/i
 
       def call
         replace_single_quotes

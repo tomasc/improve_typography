@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.6
+
+* @asgerb: Right now the DoubleQuotes processor only fixes the cases where both beginning and end quote is a straight double quote (") and not the cases where curly quotes are used wrongly
+* @asgerb: Similarly to the DoubleQuotes processor, the SingleQuotes processor currently fixes only the cases where both beginning and end quote is a straight single quote (') and not the cases where curly quotes are used wrongly
+
 ## 0.1.5
 
 * Nbsp: `Title. © 2016`

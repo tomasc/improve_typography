@@ -11,6 +11,7 @@ module ImproveTypography
 
         it { Ellipsis.call('Someday...').must_equal "Someday#{ellipsis_sign}" }
         it { Ellipsis.call('Someday ...').must_equal "Someday #{ellipsis_sign}" }
+        it { Ellipsis.call('something . . . if this').must_equal "something #{ellipsis_sign} if this" }
       end
 
       describe "dont's" do

@@ -1,7 +1,7 @@
 module ImproveTypography
   module Processors
     class Ellipsis < Processor
-      REGEXP = /\.{3,}/i
+      REGEXP = /(\.\s*?){3,}/i
 
       def call
         return str unless ellipsis_sign

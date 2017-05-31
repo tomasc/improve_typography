@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.7
+
+* Ellipsis: `. . .`
+
 ## 0.1.6
 
 * @asgerb: Right now the DoubleQuotes processor only fixes the cases where both beginning and end quote is a straight double quote (") and not the cases where curly quotes are used wrongly

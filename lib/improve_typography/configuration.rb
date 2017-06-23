@@ -11,6 +11,7 @@ module ImproveTypography
         Processors::EnDash,
         Processors::EmDash,
         Processors::MultiplySign,
+        Processors::Nbsp,
         Processors::Numbers,
         Processors::SingleQuotes,
         Processors::DoubleQuotes,

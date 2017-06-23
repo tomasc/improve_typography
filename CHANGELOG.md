@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.8
+
+* Add `Nbsp` processor to default processors
+
 ## 0.1.7
 
 * Ellipsis: `. . .`

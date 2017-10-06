@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.9
+
+* Improve `Nbsp` processor (avoid matching newlines etc.)
+
 ## 0.1.8
 
 * Add `Nbsp` processor to default processors

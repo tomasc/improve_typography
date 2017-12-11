@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.11
+
+* Fix `Nbsp` bug
+
 ## 0.1.9
 
 * Improve `Nbsp` processor (avoid matching newlines etc.)

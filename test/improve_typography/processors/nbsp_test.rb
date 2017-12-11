@@ -14,6 +14,7 @@ module ImproveTypography
         it { Nbsp.call('Title. © 2016').must_equal 'Title. ©&nbsp;2016' }
         it { Nbsp.call('Title, Vol. 2').must_equal 'Title, Vol.&nbsp;2' }
         it { Nbsp.call('Title, No. 3').must_equal 'Title, No.&nbsp;3' }
+        it { Nbsp.call('© 2002 Author').must_equal '©&nbsp;2002&nbsp;Author' }
       end
 
       describe "dont's" do

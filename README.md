@@ -66,7 +66,7 @@ module ImproveTypography
 end
 ```
 
-### Configuation
+### Configuration
 
 You can configure applied processors (and their order).
 

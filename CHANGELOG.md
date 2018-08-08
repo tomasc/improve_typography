@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.12
+
+* Improve `Multiply` processor to match fractions
+* Improve `SingleQuotes` and `DoubleQuotes` processor to respect locale
+
 ## 0.1.11
 
 * Fix `Nbsp` bug

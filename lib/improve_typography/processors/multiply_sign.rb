@@ -1,7 +1,7 @@
 module ImproveTypography
   module Processors
     class MultiplySign < Processor
-      REGEXP = /(\d+)(\s*)x(\s*)(\d+)/i
+      REGEXP = /(\d+|½|⅓|¼|⅔|⅛|⅜|⅝|⅞)(\s*)x(\s*)(\d+|½|⅓|¼|⅔|⅛|⅜|⅝|⅞)/i
 
       def call
         return str unless multiply_sign

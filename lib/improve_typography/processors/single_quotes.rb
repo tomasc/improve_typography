@@ -1,8 +1,6 @@
 module ImproveTypography
   module Processors
     class SingleQuotes < Processor
-      REGEXP = /['’‘](.*?)['’‘](?!\w)/i
-
       def call
         replace_single_quotes
       end
@@ -10,7 +8,11 @@ module ImproveTypography
       private
 
       def replace_single_quotes
-        str.gsub(REGEXP, "#{single_quotes[0]}\\1#{single_quotes[1]}")
+        str.gsub(regexp, "#{single_quotes[0]}\\1#{single_quotes[1]}")
+      end
+
+      def regexp
+        @regexp ||= Regexp.new("['#{single_quotes[0]}#{single_quotes[1]}](.*?)['#{single_quotes[0]}#{single_quotes[1]}](?!\\w)")
       end
 
       def single_quotes

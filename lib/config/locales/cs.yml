@@ -1,4 +1,9 @@
 cs:
   improve_typography:
-    single_quotes: '‚‘'
+    apostrophe_sign: '’'
     double_quotes: '„“'
+    ellipsis_sign: '…'
+    em_dash_sign: '—'
+    en_dash_sign: ' – '
+    multiply_sign: ' × '
+    single_quotes: '‚‘'

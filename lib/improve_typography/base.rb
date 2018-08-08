@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'pragmatic_segmenter'
 
 module ImproveTypography
   class Base < Struct.new(:str, :options)
@@ -13,7 +14,10 @@ module ImproveTypography
     def call
       doc.xpath('.//text()').each do |node|
         processor_classes.each do |processor|
-          node.content = processor.call(node.content, options)
+          segmenter = PragmaticSegmenter::Segmenter.new(text: node.content, language: ::I18n.locale)
+          node.content = segmenter.segment.map do |sentence|
+            processor.call(sentence, options)
+          end.join(' ')
         end
       end
 

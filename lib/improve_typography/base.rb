@@ -11,6 +11,8 @@ module ImproveTypography
     end
 
     def call
+      return str unless processor_classes.count > 0
+
       doc.xpath('.//text()').each do |node|
         processor_classes.each do |processor|
           node.content = processor.call(node.content, options)

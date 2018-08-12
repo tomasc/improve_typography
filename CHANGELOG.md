@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.13
+
+* skip processing if no processor classes defined
+
 ## 0.1.12
 
 * Improve `Multiply` processor to match fractions

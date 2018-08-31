@@ -2,6 +2,7 @@ module ImproveTypography
   module Processors
     class DoubleQuotes < Processor
       def call
+        return str unless str.match?(/[\"#{double_quotes[0]}#{double_quotes[1]}]/)
         replace_double_quotes
       end
 

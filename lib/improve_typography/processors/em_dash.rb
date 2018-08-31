@@ -4,6 +4,7 @@ module ImproveTypography
       REGEXP = /(\w+?)\s+-{1,3}\s+(\w+?)/i
 
       def call
+        return str unless str.match?(/-{1,3}/)
         str.gsub(REGEXP, '\1'+em_dash_sign+'\2')
       end
 

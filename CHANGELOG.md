@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.14
+
+* first run simplest `match?` before `gsub` to make sure the replacement is actually needed
+
 ## 0.1.13
 
 * skip processing if no processor classes defined

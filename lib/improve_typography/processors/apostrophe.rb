@@ -4,6 +4,7 @@ module ImproveTypography
       REGEXP = /(\w+)'(\w*)/i
 
       def call
+        return str unless str.match?(/'/)
         replace_apostrophe
       end
 

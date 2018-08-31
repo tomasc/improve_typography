@@ -4,6 +4,7 @@ module ImproveTypography
       REGEXP = /\u2028/
 
       def call
+        return str unless str.match?(REGEXP)
         str.gsub(REGEXP, "\n")
       end
     end

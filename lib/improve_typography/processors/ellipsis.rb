@@ -5,6 +5,7 @@ module ImproveTypography
 
       def call
         return str unless ellipsis_sign
+        return str unless str.match?(REGEXP)
 
         str.gsub(REGEXP, ellipsis_sign)
       end

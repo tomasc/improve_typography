@@ -2,6 +2,8 @@ module ImproveTypography
   module Processors
     class Nbsp < Processor
       def call
+        return str unless str.match?(/(\A|\s+)(\S|\d+)([\.?!]?)(\s+|\z)/)
+
         str
           .gsub(/(\s+)(\S|\d+|\S\.)(\s+)(\S)/, '\1\2&nbsp;\4') # in the middle of string
           .gsub(/\A(\w|\d+|\w\.)(\s+)(\S)/, '\1&nbsp;\3') # at the beginning of string

@@ -5,6 +5,7 @@ module ImproveTypography
 
       def call
         return str unless multiply_sign
+        return str unless str.match?(REGEXP)
 
         str.gsub(REGEXP, '\1'+multiply_sign+'\4')
       end

@@ -2,6 +2,7 @@ module ImproveTypography
   module Processors
     class SingleQuotes < Processor
       def call
+        return str unless str.match?(/[\'#{single_quotes[0]}#{single_quotes[1]}]/)
         replace_single_quotes
       end
 

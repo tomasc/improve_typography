@@ -74,7 +74,7 @@ You can configure applied processors (and their order).
 
 ```ruby
 ImproveTypography.configure do |config|
-  processors = [ImproveTypography::Processors::Ellipsis]
+  config.processors = [ImproveTypography::Processors::Ellipsis]
 end
 ```
 

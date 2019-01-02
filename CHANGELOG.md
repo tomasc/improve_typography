@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.15
+
+* fix the `ImproveTypography.configure` method
+
 ## 0.1.14
 
 * first run simplest `match?` before `gsub` to make sure the replacement is actually needed

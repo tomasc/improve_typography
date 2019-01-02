@@ -30,12 +30,8 @@ module ImproveTypography
       @doc ||= Nokogiri::HTML::DocumentFragment.parse("<div>#{str}</div>")
     end
 
-    def configuration
-      @configuration ||= Configuration.new
-    end
-
     def processors
-      options.fetch(:processors, configuration.processors)
+      options.fetch(:processors, ImproveTypography.configuration.processors)
     end
 
     def processor_classes

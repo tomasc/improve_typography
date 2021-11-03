@@ -1,7 +1,14 @@
 module ImproveTypography
   class Processor < Struct.new(:str, :options)
-    def self.call(*args)
-      new(*args).call
+    class << self
+      def call(*args)
+        new(*args).call
+      end
+
+      def inherited(klass)
+        ImproveTypography::Base.add_processor_class(klass)
+        super
+      end
     end
 
     def initialize(str, options = {})

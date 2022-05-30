@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.17
+
+* fix single quote capturing apostrophes (@asgerb)
+
 ## 0.1.16
 
 * guard for missing `i18n` translations (@asgerb)

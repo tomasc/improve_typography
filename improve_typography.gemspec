@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'i18n'
   spec.add_dependency 'nokogiri'
 
-  spec.add_development_dependency 'bundler', '~> 2.2'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'guard'
   spec.add_development_dependency 'guard-minitest'
   spec.add_development_dependency 'minitest', '~> 5.0'

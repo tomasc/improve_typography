@@ -15,6 +15,7 @@ module ImproveTypography
       end
 
       describe "dont's" do
+        it { _(Ellipsis.call('...', locale: :da)).must_equal '...' }
         it { _(Ellipsis.call('Some.')).must_equal 'Some.' }
         it { _(Ellipsis.call('2..5')).must_equal '2..5' }
       end

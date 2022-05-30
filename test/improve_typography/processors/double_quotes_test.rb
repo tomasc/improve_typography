@@ -14,6 +14,7 @@ module ImproveTypography
       end
 
       describe "dont's" do
+        it { _(DoubleQuotes.call('"so it is not authorless"', locale: :da)).must_equal '"so it is not authorless"' }
       end
     end
   end

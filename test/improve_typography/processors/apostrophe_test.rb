@@ -12,6 +12,7 @@ module ImproveTypography
       end
 
       describe "dont's" do
+        it { _(Apostrophe.call("isn't", locale: :da)).must_equal "isn't" }
       end
     end
   end

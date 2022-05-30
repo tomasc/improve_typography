@@ -13,6 +13,7 @@ module ImproveTypography
 
       describe "dont's" do
         it { _(EnDash.call('2-5')).must_equal '2-5' }
+        it { _(EnDash.call('June 15 - June 20', locale: :da)).must_equal 'June 15 - June 20' }
       end
     end
   end

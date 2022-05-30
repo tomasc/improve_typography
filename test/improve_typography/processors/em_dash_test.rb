@@ -21,7 +21,7 @@ module ImproveTypography
       end
 
       describe "dont's" do
-        # it { EmDash.call('2-5').wont_equal '2-5' }
+        it { _(EmDash.call('you - me', locale: :da)).must_equal 'you - me' }
       end
     end
   end

@@ -21,6 +21,14 @@ module ImproveTypography
 
     private
 
+    def translation(key)
+      I18n.t(key, scope: %i(improve_typography), locale: locale)
+    end
+
+    def sign_exists?(sign)
+      !sign.nil? && !sign.match?(/translation missing/)
+    end
+
     def configuration
       @configuration ||= Configuration.new
     end

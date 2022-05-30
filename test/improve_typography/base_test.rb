@@ -36,4 +36,8 @@ describe ImproveTypography::Base do
     let(:text) { '<span class="foo" data-value="3">2 -- 4</span>' }
     it { _(result).must_equal '<span class="foo" data-value="3">2&nbsp;–&nbsp;4</span>' }
   end
+
+  it "doesnt mess up danish" do
+    _(ImproveTypography::Base.call("Ebeltoft", locale: :da)).must_equal "Ebeltoft"
+  end
 end

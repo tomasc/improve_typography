@@ -2,6 +2,7 @@ module ImproveTypography
   module Processors
     class SingleQuotes < Processor
       def call
+        return str unless sign_exists?(single_quotes)
         return str unless str.match?(/[\'#{single_quotes[0]}#{single_quotes[1]}]/)
         replace_single_quotes
       end
@@ -17,7 +18,7 @@ module ImproveTypography
       end
 
       def single_quotes
-        options.fetch(:single_quotes, I18n.t(:single_quotes, scope: %i(improve_typography), locale: locale))
+        options.fetch(:single_quotes, translation(:single_quotes))
       end
     end
   end

@@ -11,7 +11,7 @@ describe ImproveTypography::Base do
   let(:en_dash_sign_with_nbsp) { en_dash_sign.gsub(' ', '&nbsp;') }
 
   describe 'default locale' do
-    it { result.must_equal "#{single_quotes[0]}So it isn#{apostrophe_sign}t authorless#{single_quotes[1]}. Maybe#{ellipsis_sign} Or 2#{en_dash_sign_with_nbsp}4?" }
+    it { _(result).must_equal "#{single_quotes[0]}So it isn#{apostrophe_sign}t authorless#{single_quotes[1]}. Maybe#{ellipsis_sign} Or 2#{en_dash_sign_with_nbsp}4?" }
   end
 
   describe 'locale' do
@@ -21,19 +21,23 @@ describe ImproveTypography::Base do
     describe 'local' do
       let(:result) { ImproveTypography::Base.call(text, locale: locale) }
 
-      it { result.must_equal "#{single_quotes[0]}So it isn#{apostrophe_sign}t authorless#{single_quotes[1]}. Maybe#{ellipsis_sign} Or 2#{en_dash_sign_with_nbsp}4?" }
+      it { _(result).must_equal "#{single_quotes[0]}So it isn#{apostrophe_sign}t authorless#{single_quotes[1]}. Maybe#{ellipsis_sign} Or 2#{en_dash_sign_with_nbsp}4?" }
     end
 
     describe 'global' do
       before { I18n.locale = locale }
       after { I18n.locale = I18n.default_locale }
 
-      it { result.must_equal "‚So it isn’t authorless‘. Maybe… Or 2&nbsp;–&nbsp;4?" }
+      it { _(result).must_equal "‚So it isn’t authorless‘. Maybe… Or 2&nbsp;–&nbsp;4?" }
     end
   end
 
   describe 'skips tags' do
     let(:text) { '<span class="foo" data-value="3">2 -- 4</span>' }
-    it { result.must_equal '<span class="foo" data-value="3">2&nbsp;–&nbsp;4</span>' }
+    it { _(result).must_equal '<span class="foo" data-value="3">2&nbsp;–&nbsp;4</span>' }
+  end
+
+  it "doesnt mess up danish" do
+    _(ImproveTypography::Base.call("Ebeltoft", locale: :da)).must_equal "Ebeltoft"
   end
 end

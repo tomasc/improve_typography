@@ -2,8 +2,20 @@ require 'nokogiri'
 
 module ImproveTypography
   class Base < Struct.new(:str, :options)
-    def self.call(*args)
-      new(*args).call
+    class << self
+      def all_processor_classes
+        @@all_processor_classes ||= []
+      end
+
+      def add_processor_class(klass)
+        unless all_processor_classes.include?(klass)
+          all_processor_classes << klass
+        end
+      end
+
+      def call(*args)
+        new(*args).call
+      end
     end
 
     def initialize(str, options = {})
@@ -41,7 +53,7 @@ module ImproveTypography
     end
 
     def all_processor_classes
-      @all_processor_classes ||= ObjectSpace.each_object(Class).select { |klass| klass < Processor }
+      self.class.all_processor_classes
     end
 
     def processor_for_locale(klass)

@@ -1,7 +1,14 @@
 module ImproveTypography
   class Processor < Struct.new(:str, :options)
-    def self.call(*args)
-      new(*args).call
+    class << self
+      def call(*args)
+        new(*args).call
+      end
+
+      def inherited(klass)
+        ImproveTypography::Base.add_processor_class(klass)
+        super
+      end
     end
 
     def initialize(str, options = {})
@@ -13,6 +20,14 @@ module ImproveTypography
     end
 
     private
+
+    def translation(key)
+      I18n.t(key, scope: %i(improve_typography), locale: locale)
+    end
+
+    def sign_exists?(sign)
+      !sign.nil? && !sign.match?(/translation missing/)
+    end
 
     def configuration
       @configuration ||= Configuration.new

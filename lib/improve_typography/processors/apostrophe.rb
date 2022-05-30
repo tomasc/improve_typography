@@ -4,6 +4,7 @@ module ImproveTypography
       REGEXP = /(\w+)'(\w*)/i
 
       def call
+        return str unless sign_exists?(apostrophe_sign)
         return str unless str.match?(/'/)
         replace_apostrophe
       end
@@ -15,7 +16,7 @@ module ImproveTypography
       end
 
       def apostrophe_sign
-        options.fetch(:apostrophe_sign, I18n.t(:apostrophe_sign, scope: %i(improve_typography), locale: locale))
+        options.fetch(:apostrophe_sign, translation(:apostrophe_sign))
       end
     end
   end

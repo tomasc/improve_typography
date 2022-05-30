@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.16
+
+* guard for missing `i18n` translations (@asgerb)
+* refactor inheritance logic (@asgerb)
+
 ## 0.1.15
 
 * fix the `ImproveTypography.configure` method

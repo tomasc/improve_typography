@@ -3,7 +3,7 @@ module ImproveTypography
     class SingleQuotes < Processor
       def call
         return str unless sign_exists?(single_quotes)
-        return str unless str.match?(/[\'#{single_quotes[0]}#{single_quotes[1]}]/)
+        return str unless str.match?(regexp)
         replace_single_quotes
       end
 
@@ -14,7 +14,7 @@ module ImproveTypography
       end
 
       def regexp
-        @regexp ||= Regexp.new("['#{single_quotes[0]}#{single_quotes[1]}](.*?)['#{single_quotes[0]}#{single_quotes[1]}](?!\\w)")
+        @regexp ||= Regexp.new("(?<=\\A|\\W)['#{single_quotes[0]}#{single_quotes[1]}](.*?)['#{single_quotes[0]}#{single_quotes[1]}](?!\\w)")
       end
 
       def single_quotes

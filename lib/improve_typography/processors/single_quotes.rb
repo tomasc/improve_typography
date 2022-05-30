@@ -10,11 +10,11 @@ module ImproveTypography
       private
 
       def replace_single_quotes
-        str.gsub(regexp, "#{single_quotes[0]}\\1#{single_quotes[1]}")
+        str.gsub(regexp, "\\1#{single_quotes[0]}\\2#{single_quotes[1]}")
       end
 
       def regexp
-        @regexp ||= Regexp.new("['#{single_quotes[0]}#{single_quotes[1]}](.*?)['#{single_quotes[0]}#{single_quotes[1]}](?!\\w)")
+        @regexp ||= Regexp.new("(\\A|\\W)['#{single_quotes[0]}#{single_quotes[1]}](.*?)['#{single_quotes[0]}#{single_quotes[1]}](?!\\w)")
       end
 
       def single_quotes

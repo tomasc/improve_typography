@@ -14,6 +14,7 @@ module ImproveTypography
       end
 
       describe "dont's" do
+        it { _(SingleQuotes.call("Serbia's workers' society")).must_equal "Serbia's workers' society" }
       end
     end
   end
